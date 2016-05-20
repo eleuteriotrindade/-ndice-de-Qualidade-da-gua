@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+#define adbo 102.6
+#define bdbo -0.1101
+
+int main(void) {
+	
+	long double DBO,xdbo;
+	scanf("DBO: %Lf\n", &DBO);
+	xdbo= adbo*exp(bdbo*DBO);
+	printf("%Lf\n", xdbo);
+	
+	
+	return 0;
+}
+
