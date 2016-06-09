@@ -19,6 +19,23 @@ double produtorio(double iqa[9])
 	}
 }
 
+double coliformesfecais(double q)
+{
+	
+if (parametro[1] <= 100000){
+
+
+	q = 98.24034 - 34.7145 * (log(parametro[1])) + 2.614267 * pow((log(parametro[1])), 2) + 0.107821 * pow((log(parametro[1])), 3); 
+
+
+} else{
+
+	q = 3.0;
+
+}
+}	
+	
+
 int main(){
 
 	printf("Oxigenio Dissolvido: ");
