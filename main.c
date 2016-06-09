@@ -7,12 +7,16 @@
 //parametros: Oxigenio dissolvido(OD), Coliformes Fecais(CF), Potencial Hidrogenionico(pH), Demanda Bioquimica de Oxigenio(DBO), Nitratos(NO), Fosfatos(PO), Temperatura(C), Turbidez(UNT), Residuos Totais(RT)
 //ordem dos pesos: OD CF pH DBO NO PO C UNT RT
 double peso[9]={0.17,0.15,0.12,0.10,0.10,0.10,0.10,0.08,0.08} 
-double parametro[9]
+double parametro[9],qualidade[9]
 
-double produtorio(double iqa)
+double produtorio(double iqa[9])
 {
-	double n;
-	iqa=1;
+	k=0;
+	for(i=1,i<=9,++i)
+	{
+		iqa[k]=pow(qualidade[k],peso[k]);
+		k++;
+	}
 }
 
 int main(){
