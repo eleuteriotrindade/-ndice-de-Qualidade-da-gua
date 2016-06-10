@@ -121,7 +121,7 @@ if (parametro[3] > 30){
 double temperatura(double qualidade[6])
 {
 
-if (parametro[6] > -0.625 && parametro[6] <= 0.625){
+if (parametro[6] > -0.625 && parametro[6] <= 625){
 	
 	qualidade[6] = 93.0;
 
