@@ -62,53 +62,46 @@ double coliformesfecais(double qualidade[1])
 	
 double ph(double qualidade[2])
 {
-	
-if (parametro[2] <= 2){
+	if (parametro[2] <= 2)
+	{
+		qualidade[2] =  2.0;
+	}
 
-	qualidade[2] =  2.0;
-}
+	if (parametro[2] > 2 && parametro[2] <= 6.9)
+	{
+		qualidade[2] = -37.1085 + 41.91277 * parametro[2] - 15.7043 * (pow(parametro[2], 2)) + 2.417486 * (pow(parametro[2], 3)) - 0.091252 * (pow(parametro[2], 4)); 
+	}
 
-if (parametro[2] > 2 && parametro[2] <= 6.9){
+	if (parametro[2] > 6.9 && parametro[2] <= 7.1)
+	{
+		qualidade[2] = -4.69365 - 21.4593 * parametro[2] - 68.4561 * (pow(parametro[2], 2)) + 21.638886 * (pow(parametro[2], 3)) - 1.59165 * (pow(parametro[2], 4));
+	}
 
-	qualidade[2] = -37.1085 + 41.91277 * parametro[2] - 15.7043 * (pow(parametro[2], 2)) + 2.417486 * (pow(parametro[2], 3)) - 0.091252 * (pow(parametro[2], 4)); 
+	if (parametro[2] > 7.1 && parametro[2] <= 12)
+	{
+		qualidade[2] = 7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
+	}
 
-}
-
-if (parametro[2] > 6.9 && parametro[2] <= 7.1){
-
-	qualidade[2] = -4.69365 - 21.4593 * parametro[2] - 68.4561 * (pow(parametro[2], 2)) + 21.638886 * (pow(parametro[2], 3)) - 1.59165 * (pow(parametro[2], 4));
-
-}
-
-if (parametro[2] > 7.1 && parametro[2] <= 12){
-
-	qualidade[2] = 7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
-
-}
-
-if(parametro[2] >= 12){
-
-	qualidade[2] = 3.0; 
-
-}
+	if(parametro[2] >= 12)
+	{
+		qualidade[2] = 3.0; 
+	}
 }	
-}
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------
 
 double dbo(double qualidade[3])
 {
-if (parametro[3] <= 30){
+	if (parametro[3] <= 30)
+	{
+		qualidade[3] =  100.9571 - 10.7121 * parametro[3] + 0.49544 * (pow(parametro[3], 2)) - 0.011167 * (pow(parametro[3], 3)) + 0.0001 * (pow(parametro[3], 4));
+	}
 
-	qualidade[3] =  100.9571 - 10.7121 * parametro[3] + 0.49544 * (pow(parametro[3], 2)) - 0.011167 * (pow(parametro[3], 3)) + 0.0001 * (pow(parametro[3], 4));
-
-}
-
-if (parametro[3] > 30){
-
-	qualidade[3] = 2.0; 
-
-}
+	if (parametro[3] > 30)
+	{
+		qualidade[3] = 2.0; 
+	}
 }	
 
 //---------------------------------------------------------------------------------------------------------------------------------------
@@ -120,12 +113,10 @@ if (parametro[3] > 30){
 
 double temperatura(double qualidade[6])
 {
-
-if (parametro[6] > -0.625 && parametro[6] <= 625){
-	
-	qualidade[6] = 93.0;
-
-}
+	if (parametro[6] > -0.625 && parametro[6] <= 625)
+	{
+		qualidade[6] = 93.0;
+	}
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------
