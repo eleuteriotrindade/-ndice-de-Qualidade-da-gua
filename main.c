@@ -19,17 +19,60 @@ double produtorio(double iqa[9])
 	}
 }
 
-
+//---------------------------------------------------------------------------------------------------------------------------------------
 
 double coliformesfecais(double qualidade[1])
 {
 	if (parametro[1] <= 100000){
+		
 		qualidade[1] = 98.24034 - 34.7145 * (log(parametro[1])) + 2.614267 * pow((log(parametro[1])), 2) + 0.107821 * pow((log(parametro[1])), 3); 
+	
 	}else{
+	
 		qualidade[1] = 3.0;
+	
 	}
 }	
+
+//--------------------------------------------------------------------------------------------------------------------------------------
 	
+double ph(double qualidade[2])
+{
+	
+if (parametro[2] <= 2){
+
+	qualidade[2] =  2.0;
+}
+
+if (parametro[2] > 2 && parametro[2] <= 6.9){
+
+	qualidade[2] = -37.1085 + 41.91277 * parametro[2] - 15.7043 * (pow(parametro[2], 2)) + 2.417486 * (pow(parametro[2], 3)) - 0.091252 * (pow(parametro[2], 4)); 
+
+}
+
+if (parametro[2] > 6.9 && parametro[2] <= 7.1){
+
+	qualidade[2] = -4.69365 - 21.4593 * parametro[2] - 68.4561 * (pow(parametro[2], 2)) + 21.638886 * (pow(parametro[2], 3)) - 1.59165 * (pow(parametro[2], 4));
+
+}
+
+if (parametro[2] > 7.1 && parametro[2] <= 12){
+
+	qualidade[2] = 7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
+
+}
+
+if(parametro[2] >= 12){
+
+	qualidade[2] = 3.0; 
+
+}
+}	
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+
 int main(){
 
 	printf("Oxigenio Dissolvido: ");
