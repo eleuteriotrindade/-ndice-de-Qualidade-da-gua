@@ -20,6 +20,30 @@ double produtorio(double iqa[9])
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------
+double oxigenio(double qualidade[0])
+{ //#INCOMPLETO
+	double cs,odx;
+	//cs:concentracao de saturacao
+	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*4/*esse numero nao e constante, mas nao e pedido no iqa, entao considerou-se o 4*/*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*760/*se e considerado a altitude de sao paulo*/));
+
+	odx=(qualidade[0]/cs)*100
+
+	if(cs<=100)
+	{
+		double y1,y2,y3,y4,y5;
+		y1=0.01396*odx+0.0873;
+		y2=pi/56*(odx-27);
+		y3=pi/85-(odx-15);
+		y4=(odx-65)/10;
+		y5=(65-odx)/10;
+
+		qualidade[0]=100*pow((sin(y1)),2)-(2.5*sin(y2)-0.018*odx+6.86)*sin(y3))+12/(pow(e,y4)+pow(e,y5))
+	}
+
+
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------
 
 double coliformesfecais(double qualidade[1])
 {
