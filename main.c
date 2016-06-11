@@ -113,11 +113,43 @@ double dbo(double qualidade[3])
 }	
 
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
-
+double totalnitrato(double qualidade[4])
+{
+	if (parametro[4] <= 10)
+	{
+		qualidade[4] = -5.1 * parametro[4] + 100.17;
+	}
+	
+	else if (parametro[4] > 10 && parametro[4] <= 60)
+	{
+		qualidade[4] = -22.853 /* ln do nitrato */ + 101.18;
+	}
+	
+	else if (parametro[4] > 60 && parametro[4] <=90)
+	{
+		qualidade[4] = 10000000000 * (pow(parametro[4], -5.1161));
+	}
+	
+	else if (parametro[4] > 90)
+	{
+		qualidade[4] = 1.0;
+	}
+}
 
 
 //--------Fosfatos----------------------------------------------------------------------------------------------------------------------
-
+double totalfosfato(double qualidade[5])
+{
+	if (parametro[5] <= 10)
+	{
+		qualidade[5] = 79.7 * (pow((parametro[5] + 0.821), -1.15));
+	}
+	
+	else if (parametro[5] > 10.0)
+	{
+		qualidade[5] = 5.0;
+	}
+}
 
 
 
