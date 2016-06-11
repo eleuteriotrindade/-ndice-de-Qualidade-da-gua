@@ -161,10 +161,30 @@ double temperatura(double qualidade[6])
 }
 
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
-
+double turbidez(double qualidade[7])
+{
+	if(parametro[7] <= 100)
+	{
+		qualidade[7] = (90.37*pow(e,-0.0169*parametro[7])) - 15*cos(0.0571*(parametro[7] - 30))+10.22*pow(e,-0.231*parametro[7])-0.8;
+	}
+	else
+	{
+		qualidade[7] = 5.0;
+	}
+}
 
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
-
+double residuostotais(double qualidade[8])
+{
+	if(parametro[8]<=500)
+	{
+		qualidade[8] = 133.17*pow(e,-0.0027*parametro[8])-53.17*pow(e,-0.0141*parametro[8])+ ((-6.2*pow(e-0.00462*parametro[8]))*sin(0.0146*parametro[8]));
+	}
+	else
+	{
+		qualidade[8] = 30.0;
+	}
+}
 
 //--------Corpo do programa-------------------------------------------------------------------------------------------------------------
 
@@ -196,6 +216,8 @@ int main(){
 
 	printf("Residuos Totais: ");
 	scanf("%lf\n", &parametro[8]);
+
+printf("")
 
 	return 0;
 }
