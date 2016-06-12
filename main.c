@@ -6,29 +6,31 @@
 
 //parametros: Oxigenio dissolvido(OD), Coliformes Fecais(CF), Potencial Hidrogenionico(pH), Demanda Bioquimica de Oxigenio(DBO), Nitratos(NO), Fosfatos(PO), Temperatura(C), Turbidez(UNT), Residuos Totais(RT)
 //ordem dos pesos: OD CF pH DBO NO PO C UNT RT
-double peso[9]={0.17,0.15,0.12,0.10,0.10,0.10,0.10,0.08,0.08} 
-double parametro[9],qualidade[9]
+double peso[9]={0.17,0.15,0.12,0.10,0.10,0.10,0.10,0.08,0.08};
+double parametro[9];
+double qualidade[10];
+double iqa[10];
 
-double produtorio(double iqa[10])
+double produtorio(void)
 {
-	k=0;
-	for(i=1;i<=9;++i)
+	int k=0;
+	for(int i=1;i<=9;++i)
 	{
 		iqa[k]=pow(qualidade[k],peso[k]);
 		k++;
 	}
 	iqa[9]=iqa[0]+iqa[1]+iqa[2]+iqa[3]+iqa[4]+iqa[5]+iqa[6]+iqa[7]+iqa[8];
-	printf("%lf",iqa[9]);
+	return iqa[9];
 }
 
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
-void oxigenio(void)
+double oxigenio(void)
 {
 	double cs,odx;
 	//cs:concentracao de saturacao
 	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*4/*esse numero nao e constante, mas nao e pedido no iqa, entao considerou-se o 4*/*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*760/*se e considerado a altitude de sao paulo*/));
 
-	double odx=(qualidade[0]/cs)*100
+	odx=(qualidade[0]/cs)*100;
 
 	if(odx<=100)
 	{
@@ -39,11 +41,11 @@ void oxigenio(void)
 		y4=(odx-65.0)/10.0;
 		y5=(65.0-odx)/10.0;
 
-		qualidade[0]=100*pow(sin(y1),2)-((2.5*sin(y2))-0.018*odx+6.86)*sin(y3)+(12/(pow(e,y4)+pow(e,y5));
+		qualidade[0]=100*pow(sin(y1),2)-(2.5*sin(y2))-0.018*odx+6.86*sin(y3)+(12/pow(e,y4)+pow(e,y5));
 	}
 	else if(odx>100 && odx<=140)
 	{
-		qualidade[0]= -0.00777142857142832*pow(odx,2))+(1.27854285714278*odx)+(49.8817148572);
+		qualidade[0]= -0.00777142857142832*pow(odx,2)+(1.27854285714278*odx)+(49.8817148572);
 	}
 	else
 	{
@@ -54,7 +56,7 @@ void oxigenio(void)
 
 //-------Coliformes Fecais--------------------------------------------------------------------------------------------------------------
 
-void coliformesfecais(void)
+double coliformesfecais(void)
 {
 	if (parametro[1] <= 100000)
 	{
@@ -69,7 +71,7 @@ void coliformesfecais(void)
 
 //-------pH-----------------------------------------------------------------------------------------------------------------------------
 	
-void ph(void)
+double ph(void)
 {
 	if (parametro[2] <= 2)
 	{
@@ -91,7 +93,7 @@ void ph(void)
 		qualidade[2] = 7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
 	}
 
-	else(parametro[2] >= 12)
+	else
 	{
 		qualidade[2] = 3.0; 
 	}
@@ -101,14 +103,14 @@ void ph(void)
 
 //--------Demanda Bioquímica de Oxigênio------------------------------------------------------------------------------------------------
 
-void dbo(void)
+double dbo(void)
 {
 	if (parametro[3] <= 30)
 	{
 		qualidade[3] =  100.9571 - 10.7121 * parametro[3] + 0.49544 * (pow(parametro[3], 2)) - 0.011167 * (pow(parametro[3], 3)) + 0.0001 * (pow(parametro[3], 4));
 	}
 
-	else (parametro[3] > 30)
+	else
 	{
 		qualidade[3] = 2.0; 
 	}
@@ -116,7 +118,7 @@ void dbo(void)
 }	
 
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
-void totalnitrato(void)
+double totalnitrato(void)
 {
 	if (parametro[4] <= 10)
 	{
@@ -142,7 +144,7 @@ void totalnitrato(void)
 
 
 //--------Fosfatos----------------------------------------------------------------------------------------------------------------------
-void totalfosfato(void)
+double totalfosfato(void)
 {
 	if (parametro[5] <= 10)
 	{
@@ -158,13 +160,13 @@ void totalfosfato(void)
 
 //--------Variacao de Temperatura-------------------------------------------------------------------------------------------------------
 
-void temperatura(void)
+double temperatura(void)
 {
 	qualidade[6] = 93.0;
 	return qualidade[6];
 }
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
-void turbidez(void)
+double turbidez(void)
 {
 	if(parametro[7] <= 100)
 	{
@@ -178,11 +180,11 @@ void turbidez(void)
 }
 
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
-void residuostotais(void)
+double residuostotais(void)
 {
 	if(parametro[8]<=500)
 	{
-		qualidade[8] = 133.17*pow(e,-0.0027*parametro[8])-53.17*pow(e,-0.0141*parametro[8])+ ((-6.2*pow(e-0.00462*parametro[8]))*sin(0.0146*parametro[8]));
+		qualidade[8] = 133.17*pow(e,-0.0027*parametro[8])-53.17*pow(e,-0.0141*parametro[8])+(-6.2*pow(e,-0.00462*parametro[8]))*sin(0.0146*parametro[8]);
 	}
 	else
 	{
@@ -193,7 +195,7 @@ void residuostotais(void)
 
 //--------Corpo do programa-------------------------------------------------------------------------------------------------------------
 
-int main(){
+int main(void){
 
 	printf("Oxigenio Dissolvido: ");
 	scanf("%lf\n", &parametro[0]);
@@ -223,6 +225,10 @@ int main(){
 	scanf("%lf\n", &parametro[8]);
 
 	double produtorio(double iqa[10])
-
+	double x;
+	x=iqa[9];
+	
+	printf("%.10f/n",x);
+	
 	return 0;
 }
