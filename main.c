@@ -12,13 +12,13 @@ double parametro[9],qualidade[9]
 double produtorio(double iqa[10])
 {
 	k=0;
-	for(i=1,i<=9,++i)
+	for(i=1;i<=9;++i)
 	{
 		iqa[k]=pow(qualidade[k],peso[k]);
 		k++;
 	}
-	iqa[10]=iqa[0]+iqa[1]+iqa[2]+iqa[3]+iqa[4]+iqa[5]+iqa[6]+iqa[7]+iqa[8];
-	printf("%lf",iqa);
+	iqa[9]=iqa[0]+iqa[1]+iqa[2]+iqa[3]+iqa[4]+iqa[5]+iqa[6]+iqa[7]+iqa[8];
+	printf("%lf",iqa[9]);
 }
 
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
@@ -39,11 +39,11 @@ void oxigenio(void)
 		y4=(odx-65.0)/10.0;
 		y5=(65.0-odx)/10.0;
 
-		qualidade[0]=100*pow((sin(y1)),2)-((2.5*sin(y2))-0.018*odx+6.86)*sin(y3))+(12/(pow(e,y4)+pow(e,y5)));
+		qualidade[0]=100*pow(sin(y1),2)-((2.5*sin(y2))-0.018*odx+6.86)*sin(y3)+(12/(pow(e,y4)+pow(e,y5));
 	}
 	else if(odx>100 && odx<=140)
 	{
-		qualidade[0]= -0,00777142857142832*pow(odx,2))+(1,27854285714278*odx)+(49,8817148572);
+		qualidade[0]= -0.00777142857142832*pow(odx,2))+(1.27854285714278*odx)+(49.8817148572);
 	}
 	else
 	{
