@@ -10,32 +10,21 @@ double peso[9]={0.17,0.15,0.12,0.10,0.10,0.10,0.10,0.08,0.08};
 double parametro[9];
 double qualidade[10];
 double iqa[10];
+double ox;
+double co;
+double p;
+double db;
+double ni;
+double fo;
+double te;
+double tu;
+double re;
 
-double produtorio()
-{
-	double oxigenio();
-	double coliformesfecais();
-	double ph();
-	double dbo();
-	double totalnitrato();
-	double totalfosfato();
-	double temperatura();
-	double turbidez();
-	double residuostotais();
-	int k=0;
-	for(int i=1;i<=9;++i)
-	{
-		iqa[k]=pow(qualidade[k],peso[k]);
-		k++;
-	}
-	iqa[9]=iqa[0]+iqa[1]+iqa[2]+iqa[3]+iqa[4]+iqa[5]+iqa[6]+iqa[7]+iqa[8];
-	return iqa[9];
-}
 
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
 double oxigenio()
 {
-	double cs,odx;
+	double cs, odx;
 	//cs:concentracao de saturacao
 	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*9.09*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*860));
 
@@ -60,7 +49,8 @@ double oxigenio()
 	{
 		qualidade[0]=47.0;
 	}
-	return qualidade[0];
+	
+	ox = pow(qualidade[0],peso[0]);
 }
 
 //-------Coliformes Fecais--------------------------------------------------------------------------------------------------------------
@@ -75,7 +65,7 @@ double coliformesfecais()
 	{
 		qualidade[1] = 3.0;
 	}
-	return qualidade[1];
+	co = pow(qualidade[1],peso[1]);
 }	
 
 //-------pH-----------------------------------------------------------------------------------------------------------------------------
@@ -106,7 +96,7 @@ double ph()
 	{
 		qualidade[2] = 3.0; 
 	}
-	return qualidade[2];
+	p = pow(qualidade[2],peso[2]);
 }	
 
 
@@ -123,7 +113,7 @@ double dbo()
 	{
 		qualidade[3] = 2.0; 
 	}
-	return qualidade[3];
+	db = pow(qualidade[3],peso[3]);
 }	
 
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
@@ -148,7 +138,7 @@ double totalnitrato()
 	{
 		qualidade[4] = 1.0;
 	}
-	return qualidade[4];
+	ni = pow(qualidade[4],peso[4]);
 }
 
 
@@ -164,7 +154,7 @@ double totalfosfato()
 	{
 		qualidade[5] = 5.0;
 	}
-	return qualidade[5];
+	fo = pow(qualidade[5],peso[5]);
 }
 
 //--------Variacao de Temperatura-------------------------------------------------------------------------------------------------------
@@ -172,7 +162,7 @@ double totalfosfato()
 double temperatura()
 {
 	qualidade[6] = 93.0;
-	return qualidade[6];
+	te = pow(qualidade[6],peso[6]);
 }
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
 double turbidez()
@@ -185,7 +175,7 @@ double turbidez()
 	{
 		qualidade[7] = 5.0;
 	}
-	return qualidade[7];
+	tu = pow(qualidade[7],peso[7]);
 }
 
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
@@ -199,16 +189,29 @@ double residuostotais()
 	{
 		qualidade[8] = 30.0;
 	}
-	return qualidade[8];
+	re = pow(qualidade[8],peso[8]);
 }
 
 //--------Corpo do programa-------------------------------------------------------------------------------------------------------------
 
 int main(){
 
+	oxigenio();
+	coliformesfecais();
+	ph();
+	dbo();
+	totalnitrato();
+	totalfosfato();
+	temperatura();
+	turbidez();
+	residuostotais();
+
+	double x=0;
+	
 	printf("Oxigenio Dissolvido: \n");
 	scanf("%lf\n", &parametro[0]);
-
+	
+	
 	printf("Coliformes Fecais: \n");
 	scanf("%lf\n", &parametro[1]);
 
@@ -232,24 +235,38 @@ int main(){
 
 	printf("Residuos Totais: \n");
 	scanf("%lf\n", &parametro[8]);
+	
+	x = ox + co + p + db + ni + fo + te + tu + re;
+	
+	printf("%.10f\n", ox);
+	printf("%.10f\n", co);
+	printf("%.10f\n", p);
+	printf("%.10f\n", db);
+	printf("%.10f\n", ni);
+	printf("%.10f\n", fo);
+	printf("%.10f\n", te);
+	printf("%.10f\n", tu);
+	printf("%.10f\n", re);
+ 	printf("%.10f\n", x);
+	
 
-	double produtorio();
-	double x;
-	x=iqa[9];
 	
-	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
-	if (x<=25)
+	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",iqa[9]);
+	
+	if (iqa[9]<=25)
 	printf("Muito Ruim\n");
-	else if (x > 25 && x <= 50)
+	else if (iqa[9] > 25 && iqa[9] <= 50)
 	printf("Ruim\n");
-	else if (x > 50 && x <= 70)
+	else if (iqa[9] > 50 && iqa[9] <= 70)
 	printf("Médio\n");
-	else if (x > 70 && x <= 90)
+	else if (iqa[9] > 70 && iqa[9] <= 90)
 	printf("Boa\n");
 	else
 	printf("Muito Boa\n");
-
-
+	
+	
+	
 	return 0;
 }
+
