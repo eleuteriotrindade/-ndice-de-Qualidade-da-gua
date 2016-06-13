@@ -20,7 +20,26 @@ double te;
 double tu;
 double re;
 
-
+//----------Somatório-------------------------------------------------------------------------------------------------------------------
+double somatorio()
+{
+	double x=0;
+	/* o calculo está sem coloformefecal*/
+	x = ox + p + db + ni + fo + te + tu + re;
+	
+	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
+	
+	if (x<=25)
+	printf("Muito Ruim\n");
+	else if (x > 25 && x <= 50)
+	printf("Ruim\n");
+	else if (x > 50 && x <= 70)
+	printf("Médio\n");
+	else if (x > 70 && x <= 90)
+	printf("Boa\n");
+	else
+	printf("Muito Boa\n");
+}
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
 double oxigenio()
 {
@@ -206,7 +225,7 @@ int main(){
 	turbidez();
 	residuostotais();
 
-	double x=0;
+	
 	
 	printf("Oxigenio Dissolvido: \n");
 	scanf("%lf\n", &parametro[0]);
@@ -236,37 +255,10 @@ int main(){
 	printf("Residuos Totais: \n");
 	scanf("%lf\n", &parametro[8]);
 	
-	x = ox + co + p + db + ni + fo + te + tu + re;
-	
-	printf("%.10f\n", ox);
-	printf("%.10f\n", co);
-	printf("%.10f\n", p);
-	printf("%.10f\n", db);
-	printf("%.10f\n", ni);
-	printf("%.10f\n", fo);
-	printf("%.10f\n", te);
-	printf("%.10f\n", tu);
-	printf("%.10f\n", re);
- 	printf("%.10f\n", x);
-	
-
-	
-	
-	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",iqa[9]);
-	
-	if (iqa[9]<=25)
-	printf("Muito Ruim\n");
-	else if (iqa[9] > 25 && iqa[9] <= 50)
-	printf("Ruim\n");
-	else if (iqa[9] > 50 && iqa[9] <= 70)
-	printf("Médio\n");
-	else if (iqa[9] > 70 && iqa[9] <= 90)
-	printf("Boa\n");
-	else
-	printf("Muito Boa\n");
-	
+	somatorio();
 	
 	
 	return 0;
 }
+
 
