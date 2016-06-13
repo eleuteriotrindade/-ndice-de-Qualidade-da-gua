@@ -28,7 +28,7 @@ double oxigenio(void)
 {
 	double cs,odx;
 	//cs:concentracao de saturacao
-	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*4/*esse numero nao e constante, mas nao e pedido no iqa, entao considerou-se o 4*/*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*760/*se e considerado a altitude de sao paulo*/));
+	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*9.09*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*860));
 
 	odx=(qualidade[0]/cs)*100;
 
