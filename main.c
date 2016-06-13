@@ -224,7 +224,7 @@ int main(void){
 	printf("Residuos Totais: ");
 	scanf("%lf\n", &parametro[8]);
 
-	double produtorio(double iqa[10])
+	double produtorio();
 	double x;
 	x=iqa[9];
 	
