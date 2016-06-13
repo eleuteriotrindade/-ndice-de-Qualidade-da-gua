@@ -11,8 +11,17 @@ double parametro[9];
 double qualidade[10];
 double iqa[10];
 
-double produtorio(void)
+double produtorio()
 {
+	double oxigenio();
+	double coliformesfecais();
+	double ph();
+	double dbo();
+	double totalnitrato();
+	double totalfosfato();
+	double temperatura();
+	double turbidez();
+	double residuostotais();
 	int k=0;
 	for(int i=1;i<=9;++i)
 	{
@@ -24,7 +33,7 @@ double produtorio(void)
 }
 
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
-double oxigenio(void)
+double oxigenio()
 {
 	double cs,odx;
 	//cs:concentracao de saturacao
@@ -56,7 +65,7 @@ double oxigenio(void)
 
 //-------Coliformes Fecais--------------------------------------------------------------------------------------------------------------
 
-double coliformesfecais(void)
+double coliformesfecais()
 {
 	if (parametro[1] <= 100000)
 	{
@@ -71,7 +80,7 @@ double coliformesfecais(void)
 
 //-------pH-----------------------------------------------------------------------------------------------------------------------------
 	
-double ph(void)
+double ph()
 {
 	if (parametro[2] <= 2)
 	{
@@ -103,7 +112,7 @@ double ph(void)
 
 //--------Demanda Bioquímica de Oxigênio------------------------------------------------------------------------------------------------
 
-double dbo(void)
+double dbo()
 {
 	if (parametro[3] <= 30)
 	{
@@ -118,7 +127,7 @@ double dbo(void)
 }	
 
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
-double totalnitrato(void)
+double totalnitrato()
 {
 	if (parametro[4] <= 10)
 	{
@@ -144,7 +153,7 @@ double totalnitrato(void)
 
 
 //--------Fosfatos----------------------------------------------------------------------------------------------------------------------
-double totalfosfato(void)
+double totalfosfato()
 {
 	if (parametro[5] <= 10)
 	{
@@ -160,13 +169,13 @@ double totalfosfato(void)
 
 //--------Variacao de Temperatura-------------------------------------------------------------------------------------------------------
 
-double temperatura(void)
+double temperatura()
 {
 	qualidade[6] = 93.0;
 	return qualidade[6];
 }
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
-double turbidez(void)
+double turbidez()
 {
 	if(parametro[7] <= 100)
 	{
@@ -180,7 +189,7 @@ double turbidez(void)
 }
 
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
-double residuostotais(void)
+double residuostotais()
 {
 	if(parametro[8]<=500)
 	{
@@ -195,40 +204,52 @@ double residuostotais(void)
 
 //--------Corpo do programa-------------------------------------------------------------------------------------------------------------
 
-int main(void){
+int main(){
 
-	printf("Oxigenio Dissolvido: ");
+	printf("Oxigenio Dissolvido: \n");
 	scanf("%lf\n", &parametro[0]);
 
-	printf("Coliformes Fecais: ");
+	printf("Coliformes Fecais: \n");
 	scanf("%lf\n", &parametro[1]);
 
-	printf("Potencial Hidrogenionico(pH): ");
+	printf("Potencial Hidrogenionico(pH): \n");
 	scanf("%lf\n", &parametro[2]);
 
-	printf("Demanda Bioquimica de Oxigenio: ");
+	printf("Demanda Bioquimica de Oxigenio: \n");
 	scanf("%lf\n", &parametro[3]);
 
-	printf("Nitratos: ");
+	printf("Nitratos: \n");
 	scanf("%lf\n", &parametro[4]);
 
-	printf("Fosfatos: ");
+	printf("Fosfatos: \n");
 	scanf("%lf\n", &parametro[5]);
 
-	printf("Temperatura(ºC): ");
+	printf("Temperatura(ºC): \n");
 	scanf("%lf\n", &parametro[6]);
 
-	printf("Turbidez: ");
+	printf("Turbidez: \n");
 	scanf("%lf\n", &parametro[7]);
 
-	printf("Residuos Totais: ");
+	printf("Residuos Totais: \n");
 	scanf("%lf\n", &parametro[8]);
 
 	double produtorio();
 	double x;
 	x=iqa[9];
 	
-	printf("%.10f/n",x);
+	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
+	if (x<=25)
+	printf("Muito Ruim\n");
+	else if (x > 25 && x <= 50)
+	printf("Ruim\n");
+	else if (x > 50 && x <= 70)
+	printf("Médio\n");
+	else if (x > 70 && x <= 90)
+	printf("Boa\n");
+	else
+	printf("Muito Boa\n");
+
+
 	return 0;
 }
