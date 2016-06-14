@@ -10,7 +10,8 @@ O usuário deverá incluir o valor para cada item determinará se o uso desta po
 Coliformes Fecais</br>
 Potencial Hidrogenionico(pH)</br>
 Demanda Bioquimica de Oxigenio</br>
-Nitratos</br><br>Fosfatos</br>
+Nitratos</br>
+Fosfatos</br>
 Temperatura(ºC)</br>
 Turbidez</br>
 Residuos Totais</br>
