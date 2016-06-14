@@ -1,13 +1,18 @@
 =====================================
 <h2><font face="Arial"><b>Índice de qualidade da água.</b></h2>
 =====================================
+
 1. Finalidade</br>
 2. Solicitação e Resultado</br>
 3. Bibliografia</br>
+
 =====================================
+
 <b>1.</b>O programa tem como finalidade calcular o IQA(Índice de Qualidade de Água) através de 9 parâmetros, que por meio de calculos de funções próprias levam o resultado ao produtorio que determina a qualidade final.</br>
 O usuário deverá incluir o valor para cada parâmetro, que determinará se o uso desta pode ser voltado para o consumo ou o que quer que se espere.</br>
+
 =====================================
+
 <b>2.O programa solicitará:</b>
 
 <i><p>Oxigenio Dissolvido</br>
