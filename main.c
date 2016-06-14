@@ -41,17 +41,14 @@ double somatorio()
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
 double oxigenio()
 {
-	printf("Oxigenio Dissolvido: \n");
-	scanf("%lf\n", &parametro[0]);
-	
-	printf("Temperatura(ºC): \n");
-	scanf("%lf\n", &parametro[6]);
+	printf("Oxigenio Dissolvido: ");
+	scanf("%lf", &parametro[0]);
 	
 	double cs, odx;
 	//cs:concentracao de saturacao
 	cs=(14.2*pow(e,-0.0212*parametro[6])-(0.0016*9.09*pow(e,-0.0264*parametro[6])))*(0.994-(0.0001042*860));
 
-	odx=(qualidade[0]/cs)*100;
+	odx=(parametro[0]/cs)*100;
 
 	if(odx<=100)
 	{
@@ -72,7 +69,7 @@ double oxigenio()
 	{
 		qualidade[0]=47.0;
 	}
-	
+	//printf("%f\n",qualidade[0]);
 	ox = pow(qualidade[0],peso[0]);
 }
 
@@ -80,8 +77,8 @@ double oxigenio()
 
 double coliformesfecais()
 {
-	printf("Coliformes Fecais: \n");
-	scanf("%lf\n", &parametro[1]);
+	printf("\nColiformes Fecais: ");
+	scanf("%lf", &parametro[1]);
 	
 	if (parametro[1] <= 100000)
 	{
@@ -91,6 +88,7 @@ double coliformesfecais()
 	{
 		qualidade[1] = 3.0;
 	}
+	//printf("%f\n",qualidade[1]);
 	co = pow(qualidade[1], peso[1]);
 }	
 
@@ -98,8 +96,8 @@ double coliformesfecais()
 	
 double ph()
 {
-	printf("Potencial Hidrogenionico(pH): \n");
-	scanf("%lf\n", &parametro[2]);
+	printf("\nPotencial Hidrogenionico(pH): ");
+	scanf("%lf", &parametro[2]);
 	
 	if (parametro[2] <= 2)
 	{
@@ -125,6 +123,7 @@ double ph()
 	{
 		qualidade[2] = 3.0; 
 	}
+	//printf("%f\n",qualidade[2]);
 	p = pow(qualidade[2],peso[2]);
 }	
 
@@ -133,8 +132,8 @@ double ph()
 
 double dbo()
 {
-	printf("Demanda Bioquimica de Oxigenio: \n");
-	scanf("%lf\n", &parametro[3]);
+	printf("\nDemanda Bioquimica de Oxigenio: ");
+	scanf("%lf", &parametro[3]);
 	
 	if (parametro[3] <= 30)
 	{
@@ -145,14 +144,15 @@ double dbo()
 	{
 		qualidade[3] = 2.0; 
 	}
+	//printf("%f\n",qualidade[3]);
 	db = pow(qualidade[3],peso[3]);
 }	
 
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
 double totalnitrato()
 {
-	printf("Nitratos: \n");
-	scanf("%lf\n", &parametro[4]);
+	printf("\nNitratos: ");
+	scanf("%lf", &parametro[4]);
 	
 	if (parametro[4] <= 10)
 	{
@@ -173,6 +173,7 @@ double totalnitrato()
 	{
 		qualidade[4] = 1.0;
 	}
+	//printf("%f\n",qualidade[4]);
 	ni = pow(qualidade[4],peso[4]);
 }
 
@@ -180,8 +181,8 @@ double totalnitrato()
 //--------Fosfatos----------------------------------------------------------------------------------------------------------------------
 double totalfosfato()
 {
-	printf("Fosfatos: \n");
-	scanf("%lf\n", &parametro[5]);
+	printf("\nFosfatos: ");
+	scanf("%lf", &parametro[5]);
 	
 	if (parametro[5] <= 10)
 	{
@@ -192,6 +193,7 @@ double totalfosfato()
 	{
 		qualidade[5] = 5.0;
 	}
+	//printf("%f\n",qualidade[5]);
 	fo = pow(qualidade[5],peso[5]);
 }
 
@@ -199,16 +201,21 @@ double totalfosfato()
 
 double temperatura()
 {
+	printf("\nTemperatura(ºC): ");
+	scanf("%lf", &parametro[6]);
 	
-	
-	qualidade[6] = 93.0;
+	if(parametro[6] < 800000)
+	{
+		qualidade[6] = 93.0;
+	}
+	//printf("%f\n",qualidade[6]);
 	te = pow(qualidade[6],peso[6]);
 }
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
 double turbidez()
 {
-	printf("Turbidez: \n");
-	scanf("%lf\n", &parametro[7]);
+	printf("\nTurbidez: ");
+	scanf("%lf", &parametro[7]);
 	
 	if(parametro[7] <= 100)
 	{
@@ -218,14 +225,15 @@ double turbidez()
 	{
 		qualidade[7] = 5.0;
 	}
+	//printf("%f\n",qualidade[7]);
 	tu = pow(qualidade[7],peso[7]);
 }
 
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
 double residuostotais()
 {
-	printf("Residuos Totais: \n");
-	scanf("%lf\n", &parametro[8]);
+	printf("\nResiduos Totais: ");
+	scanf("%lf", &parametro[8]);
 	
 	if(parametro[8]<=500)
 	{
@@ -235,6 +243,7 @@ double residuostotais()
 	{
 		qualidade[8] = 30.0;
 	}
+	//printf("%f\n",qualidade[8]);
 	re = pow(qualidade[8],peso[8]);
 }
 
