@@ -17,10 +17,10 @@ O usuário deverá incluir o valor para cada parâmetro, que determinará se o u
 
 Para compilar o programa o usuário deve digitar os seguintes comandos no terminal:
 
-git clone <b><i>url_do_repositorio</b></i>
-cd <b><i>nome_do_repositorio</b></i>
-gcc main.c -o -lm
-./main
+git clone <b><i>url_do_repositorio</b></i></br>
+cd <b><i>nome_do_repositorio</b></i></br>
+gcc main.c -o -lm</br>
+./main</br>
 
 Após a realização dos comandos, siga as instruções conforme solicitado pelo programa.
  
