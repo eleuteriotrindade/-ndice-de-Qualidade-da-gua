@@ -24,8 +24,7 @@ double re;
 double somatorio()
 {
 	double x=0;
-	/* o calculo está sem coloformefecal*/
-	x = ox + p + db + ni + fo + te + tu + re;
+	x = ox + co + p + db + ni + fo + te + tu + re;
 	
 	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
@@ -43,6 +42,10 @@ double somatorio()
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
 double oxigenio()
 {
+	printf("Oxigenio Dissolvido: \n");
+	scanf("%lf\n", &parametro[0]);
+	
+	
 	double cs, odx;
 	//cs:concentracao de saturacao
 	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*9.09*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*860));
@@ -76,21 +79,27 @@ double oxigenio()
 
 double coliformesfecais()
 {
+	printf("Coliformes Fecais: \n");
+	scanf("%lf\n", &parametro[1]);
+	
 	if (parametro[1] <= 100000)
 	{
-		qualidade[1] = 98.24034 - 34.7145 * (log(parametro[1])) + 2.614267 * pow((log(parametro[1])), 2) + 0.107821 * pow((log(parametro[1])), 3); 
+		qualidade[1] = 98.24034 - 34.7145 * (log(parametro[1])) + 2.614267 * pow(log(parametro[1]), 2) + 0.107821 * pow(log(parametro[1]), 3); 
 	}
 	else
 	{
 		qualidade[1] = 3.0;
 	}
-	co = pow(qualidade[1],peso[1]);
+	co = pow(qualidade[1], peso[1]);
 }	
 
 //-------pH-----------------------------------------------------------------------------------------------------------------------------
 	
 double ph()
 {
+	printf("Potencial Hidrogenionico(pH): \n");
+	scanf("%lf\n", &parametro[2]);
+	
 	if (parametro[2] <= 2)
 	{
 		qualidade[2] =  2.0;
@@ -123,6 +132,9 @@ double ph()
 
 double dbo()
 {
+	printf("Demanda Bioquimica de Oxigenio: \n");
+	scanf("%lf\n", &parametro[3]);
+	
 	if (parametro[3] <= 30)
 	{
 		qualidade[3] =  100.9571 - 10.7121 * parametro[3] + 0.49544 * (pow(parametro[3], 2)) - 0.011167 * (pow(parametro[3], 3)) + 0.0001 * (pow(parametro[3], 4));
@@ -138,6 +150,9 @@ double dbo()
 //--------Nitratos----------------------------------------------------------------------------------------------------------------------
 double totalnitrato()
 {
+	printf("Nitratos: \n");
+	scanf("%lf\n", &parametro[4]);
+	
 	if (parametro[4] <= 10)
 	{
 		qualidade[4] = -5.1 * parametro[4] + 100.17;
@@ -164,6 +179,9 @@ double totalnitrato()
 //--------Fosfatos----------------------------------------------------------------------------------------------------------------------
 double totalfosfato()
 {
+	printf("Fosfatos: \n");
+	scanf("%lf\n", &parametro[5]);
+	
 	if (parametro[5] <= 10)
 	{
 		qualidade[5] = 79.7 * (pow((parametro[5] + 0.821), -1.15));
@@ -180,12 +198,18 @@ double totalfosfato()
 
 double temperatura()
 {
+	printf("Temperatura(ºC): \n");
+	scanf("%lf\n", &parametro[6]);
+	
 	qualidade[6] = 93.0;
 	te = pow(qualidade[6],peso[6]);
 }
 //--------Turbidez----------------------------------------------------------------------------------------------------------------------
 double turbidez()
 {
+	printf("Turbidez: \n");
+	scanf("%lf\n", &parametro[7]);
+	
 	if(parametro[7] <= 100)
 	{
 		qualidade[7] = (90.37*pow(e,-0.0169*parametro[7])) - 15*cos(0.0571*(parametro[7] - 30))+10.22*pow(e,-0.231*parametro[7])-0.8;
@@ -200,6 +224,9 @@ double turbidez()
 //--------Resíduos totais---------------------------------------------------------------------------------------------------------------
 double residuostotais()
 {
+	printf("Residuos Totais: \n");
+	scanf("%lf\n", &parametro[8]);
+	
 	if(parametro[8]<=500)
 	{
 		qualidade[8] = 133.17*pow(e,-0.0027*parametro[8])-53.17*pow(e,-0.0141*parametro[8])+(-6.2*pow(e,-0.00462*parametro[8]))*sin(0.0146*parametro[8]);
@@ -216,49 +243,26 @@ double residuostotais()
 int main(){
 
 	oxigenio();
+	
 	coliformesfecais();
+	
 	ph();
+	
 	dbo();
+	
 	totalnitrato();
+	
 	totalfosfato();
+	
 	temperatura();
+	
 	turbidez();
+	
 	residuostotais();
 
-	
-	
-	printf("Oxigenio Dissolvido: \n");
-	scanf("%lf\n", &parametro[0]);
-	
-	
-	printf("Coliformes Fecais: \n");
-	scanf("%lf\n", &parametro[1]);
-
-	printf("Potencial Hidrogenionico(pH): \n");
-	scanf("%lf\n", &parametro[2]);
-
-	printf("Demanda Bioquimica de Oxigenio: \n");
-	scanf("%lf\n", &parametro[3]);
-
-	printf("Nitratos: \n");
-	scanf("%lf\n", &parametro[4]);
-
-	printf("Fosfatos: \n");
-	scanf("%lf\n", &parametro[5]);
-
-	printf("Temperatura(ºC): \n");
-	scanf("%lf\n", &parametro[6]);
-
-	printf("Turbidez: \n");
-	scanf("%lf\n", &parametro[7]);
-
-	printf("Residuos Totais: \n");
-	scanf("%lf\n", &parametro[8]);
-	
 	somatorio();
+	
 	
 	
 	return 0;
 }
-
-
