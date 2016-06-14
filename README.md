@@ -6,7 +6,7 @@ O usuário deverá incluir o valor para cada item determinará se o uso desta po
 
 <b>O programa solicitará:</b>
 
-<p>Oxigenio Dissolvido</br>
+<i><p>Oxigenio Dissolvido</br>
 Coliformes Fecais</br>
 Potencial Hidrogenionico(pH)</br>
 Demanda Bioquimica de Oxigenio</br>
@@ -14,7 +14,7 @@ Nitratos</br>
 Fosfatos</br>
 Temperatura(ºC)</br>
 Turbidez</br>
-Residuos Totais</br>
+Residuos Totais</br></i>
 
 Após atribuir o valor respectivamente o programa informará o resultado de: Muito Ruim, Ruim, Médio, Boa ou Muito Boa.
 
