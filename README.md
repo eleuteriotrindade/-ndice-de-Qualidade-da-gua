@@ -1,8 +1,7 @@
 <font face="Arial"><b>índice da qualidade da água.</b>
 
-O programa tem por finalidade calcular através de atributos a qualidade da água.
-
-O usuário deverá incluir o valor para cada item que determinará se o uso desta pode ser voltada para o consumo.
+O programa tem por finalidade calcular através de atributos a qualidade da água.</br>
+O usuário deverá incluir o valor para cada item que determinará se o uso desta pode ser voltada para o consumo.</br>
 
 <b>O programa solicitará:</b>
 
@@ -16,9 +15,8 @@ Temperatura(ºC)</br>
 Turbidez</br>
 Residuos Totais</br></i>
 
-Após atribuir o valor respectivamente o programa informará o resultado de: Muito Ruim, Ruim, Médio, Boa ou Muito Boa.
-
-Para acessar o programa, cujo o nome é main.c. Acesse o terminal e siga as instruções para abrir o programa e imputar os valores.</font>
+Após atribuir o valor respectivamente o programa informará o resultado de: Muito Ruim, Ruim, Médio, Boa ou Muito Boa.</br>
+Para acessar o programa, cujo o nome é main.c. Acesse o terminal e siga as instruções para abrir o programa e imputar os valores.</br>
 
 
 
@@ -28,7 +26,7 @@ H.M. Deitel;P.J. Deitel. Como programar em C. 2 ed. Rio de Janeiro: LTC -  1999.
 
 <b>Referências:</b>
 
-http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm
+http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm </font>
 
 
 
