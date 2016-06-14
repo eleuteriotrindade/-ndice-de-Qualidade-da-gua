@@ -43,11 +43,7 @@ Após atribuir os valores respectivos, o programa informará o resultado, e depe
 
 <b>4.Bibliografia:</b>
 
-H.M. Deitel;P.J. Deitel. Como programar em C. 2 ed. Rio de Janeiro: LTC -  1999.
-
-<b>Referências:</b>
-
-http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm </font>
-
-
+Deitel M.;Deitel J. COMO PROGRAMAR EM C. 2 ed. Rio de Janeiro: LTC -  1999.
+Carvalho J.; et al. 2005. SISTEMA DE CÁLCULO DA QUALIDADE DA ÁGUA (SCQA): ESTABELECIMENTO DAS EQUAÇÕES DO ÍNDICE DE QUALIDADE DAS ÁGUAS (IQA).
+Grunitzki R.; et al. 2013. FERRAMENTA WEB PARA DETERMINAÇÃO DO ÍNDICE DE QUALIDADE DE ÁGUA A PARTIR DA REESTRUTURAÇÃO DAS EQUAÇÕES QUE DESCREVEM AS CURVAS DOS INDICADORES DE QUALIDADE. 
 
