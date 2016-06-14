@@ -1,2 +1,25 @@
-# Índice de Qualidade da Água
-programa em c que determina o índice da qualidade da agua
+<b>índice da qualidade da água.</b>
+
+O programa tem por finalidade calcular através de atributos a qualidade da água.
+
+O usuário deverá incluir o valor para cada item determinará se o uso desta pode ser voltada para o consumo.
+
+<b>O programa solicitará:</b>
+
+<p>Oxigenio Dissolvido</p><p>Coliformes Fecais</p><p>Potencial Hidrogenionico(pH)</p><p>Demanda Bioquimica de Oxigenio</p><p>Nitratos</p><p>Fosfatos</p><p>Temperatura(ºC)</p><p>Turbidez</p><p>Residuos Totais</p>
+
+Após atribuir o valor respectivamente o programa informará o resultado de: Muito Ruim, Ruim, Médio, Boa ou Muito Boa.
+
+Para acessar o programa o main.c, acesse o terminal e siga as instruções para abrir o programa e imputar os valores.
+
+
+<b>Bibliografia:</b>
+
+H.M. Deitel;P.J. Deitel. Como programar em C. 2 ed. Rio de Janeiro: LTC -  1999.
+
+<b>Referências:</b>
+
+http://www.inf.pucrs.br/~pinho/LaproI/IntroC/IntroC.htm
+
+
+
