@@ -1,4 +1,4 @@
-<h2><font face="Arial"><b>índice da qualidade da água.</b></h2>
+<h2><font face="Arial"><b>índice de qualidade da água.</b></h2>
 
 O programa tem por finalidade calcular através de atributos a qualidade da água.</br>
 O usuário deverá incluir o valor para cada item que determinará se o uso desta pode ser voltada para o consumo.</br>
