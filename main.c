@@ -27,16 +27,16 @@ double somatorio()
 	
 	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
-	if (x<=25)
-	printf("Muito Ruim\n");
-	else if (x > 25 && x <= 50)
+	if (x<=19)
+	printf("Péssima\n");
+	else if (x > 19 && x <= 36)
 	printf("Ruim\n");
-	else if (x > 50 && x <= 70)
-	printf("Médio\n");
-	else if (x > 70 && x <= 90)
+	else if (x > 36 && x <= 50)
+	printf("Aceitável\n");
+	else if (x > 50 && x <= 79)
 	printf("Boa\n");
 	else
-	printf("Muito Boa\n");
+	printf("Ótima\n");
 }
 //----------Oxigenio Dissolvido---------------------------------------------------------------------------------------------------------
 double oxigenio()
@@ -251,6 +251,8 @@ double residuostotais()
 
 int main(){
 
+	printf("Entre com os parâmetros\n\n");
+	
 	oxigenio();
 	
 	coliformesfecais();
