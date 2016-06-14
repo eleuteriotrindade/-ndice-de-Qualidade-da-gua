@@ -4,14 +4,12 @@
 #define e 2.718281828459045235360287
 #define pi 3.14159265358979323846
 
-/*parametros: Oxigenio dissolvido(OD), Coliformes Fecais(CF), Potencial Hidrogenionico(pH), Demanda Bioquimica de Oxigenio(DBO), 
-Nitratos(NO), Fosfatos(PO), Temperatura(C), Turbidez(UNT), Residuos Totais(RT)*/
+//parametros: Oxigenio dissolvido(OD), Coliformes Fecais(CF), Potencial Hidrogenionico(pH), Demanda Bioquimica de Oxigenio(DBO), Nitratos(NO), Fosfatos(PO), Temperatura(C), Turbidez(UNT), Residuos Totais(RT)
 //ordem dos pesos: OD CF pH DBO NO PO C UNT RT
 double peso[9]={0.17,0.15,0.12,0.10,0.10,0.10,0.10,0.08,0.08};
 double parametro[9];
 double qualidade[9];
-//variaveis de OD CF PH DBO NO PO C UNT RT
-double ox; 
+double ox;
 double co;
 double p;
 double db;
@@ -25,7 +23,7 @@ double re;
 double somatorio()
 {
 	double x=0;
-	x = ox + co + p + db + ni + fo + te + tu + re; 
+	x = ox + co * p * db * ni * fo * te * tu * re;
 	
 	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
@@ -49,7 +47,7 @@ double oxigenio()
 	
 	double cs, odx;
 	//cs:concentracao de saturacao
-	cs=(14.2*pow(e,-0.0212*qualidade[6])-(0.0016*9.09*pow(e,-0.0264*qualidade[6])))*(0.994-(0.0001042*860));
+	cs=(14.2*pow(e,-0.0212*parametro[6])-(0.0016*9.09*pow(e,-0.0264*parametro[6])))*(0.994-(0.0001042*860));
 
 	odx=(qualidade[0]/cs)*100;
 
@@ -262,8 +260,6 @@ int main(){
 	residuostotais();
 
 	somatorio();
-	
-	
 	
 	return 0;
 }
