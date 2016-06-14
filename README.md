@@ -1,8 +1,8 @@
-<b>índice da qualidade da água.</b>
+<font face="Arial"><b>índice da qualidade da água.</b>
 
 O programa tem por finalidade calcular através de atributos a qualidade da água.
 
-O usuário deverá incluir o valor para cada item determinará se o uso desta pode ser voltada para o consumo.
+O usuário deverá incluir o valor para cada item que determinará se o uso desta pode ser voltada para o consumo.
 
 <b>O programa solicitará:</b>
 
@@ -18,7 +18,8 @@ Residuos Totais</br></i>
 
 Após atribuir o valor respectivamente o programa informará o resultado de: Muito Ruim, Ruim, Médio, Boa ou Muito Boa.
 
-Para acessar o programa o main.c, acesse o terminal e siga as instruções para abrir o programa e imputar os valores.
+Para acessar o programa, cujo o nome é main.c. Acesse o terminal e siga as instruções para abrir o programa e imputar os valores.</font>
+
 
 
 <b>Bibliografia:</b>
