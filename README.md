@@ -13,6 +13,19 @@ O usuário deverá incluir o valor para cada parâmetro, que determinará se o u
 
 =====================================
 
+<img src="https://under-linux.org/attachment.php?attachmentid=56629&d=1420575002" width="300" height="300">
+
+Para compilar o programa o usuário deve digitar os seguintes comandos no terminal:
+
+git clone <b><i>url_do_repositorio</b></i>
+cd <b><i>nome_do_repositorio</b></i>
+gcc main.c -o -lm
+./main
+
+Após a realização dos comandos, siga as instruções conforme solicitado pelo programa.
+ 
+
+
 <b>2.O programa solicitará:</b>
 
 <i><p>Oxigenio Dissolvido</br>
@@ -26,8 +39,6 @@ Turbidez</br>
 Residuos Totais</br></i>
 
 Após atribuir os valores respectivos o programa informará os seguintes resultados dependendo do resultado obtido: Péssima, Ruim, Aceitável, Boa ou Ótima.</br>
-
-<img src="https://under-linux.org/attachment.php?attachmentid=56629&d=1420575002" width="300" height="300">
 
 <b>3.Bibliografia:</b>
 
