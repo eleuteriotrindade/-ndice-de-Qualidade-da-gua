@@ -23,7 +23,7 @@ double re;
 double somatorio()
 {
 	double x=0;
-	x = ox + co * p * db * ni * fo * te * tu * re;
+	x = ox * co * p * db * ni * fo * te * tu * re;
 	
 	printf("\n\nSeu IQA é %.10f\nA qualidade da água é:",x);
 	
@@ -44,6 +44,8 @@ double oxigenio()
 	printf("Oxigenio Dissolvido: \n");
 	scanf("%lf\n", &parametro[0]);
 	
+	printf("Temperatura(ºC): \n");
+	scanf("%lf\n", &parametro[6]);
 	
 	double cs, odx;
 	//cs:concentracao de saturacao
@@ -83,7 +85,7 @@ double coliformesfecais()
 	
 	if (parametro[1] <= 100000)
 	{
-		qualidade[1] = 98.24034 - 34.7145 * (log(parametro[1])) + 2.614267 * pow(log(parametro[1]), 2) + 0.107821 * pow(log(parametro[1]), 3); 
+		qualidade[1] = 98.24034 - 34.7145 * (log10(parametro[1])) + 2.614267 * pow(log10(parametro[1]), 2) + 0.107821 * pow(log10(parametro[1]), 3); 
 	}
 	else
 	{
@@ -116,7 +118,7 @@ double ph()
 
 	else if (parametro[2] > 7.1 && parametro[2] <= 12)
 	{
-		qualidade[2] = 7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
+		qualidade[2] = -7698.19 + 3262.031 * parametro[2] - 499.494 * (pow(parametro[2], 2)) + 33.1551 * (pow(parametro[2], 3)) - 0.810613 * (pow(parametro[2], 4));
 	}
 
 	else
@@ -159,7 +161,7 @@ double totalnitrato()
 	
 	else if (parametro[4] > 10 && parametro[4] <= 60)
 	{
-		qualidade[4] = -22.853 /* ln do nitrato */ + 101.18;
+		qualidade[4] = -22.853 * (log(parametro[4])) + 101.18;
 	}
 	
 	else if (parametro[4] > 60 && parametro[4] <=90)
@@ -186,7 +188,7 @@ double totalfosfato()
 		qualidade[5] = 79.7 * (pow((parametro[5] + 0.821), -1.15));
 	}
 	
-	else if (parametro[5] > 10.0)
+	else if (parametro[5] > 10)
 	{
 		qualidade[5] = 5.0;
 	}
@@ -197,8 +199,7 @@ double totalfosfato()
 
 double temperatura()
 {
-	printf("Temperatura(ºC): \n");
-	scanf("%lf\n", &parametro[6]);
+	
 	
 	qualidade[6] = 93.0;
 	te = pow(qualidade[6],peso[6]);
